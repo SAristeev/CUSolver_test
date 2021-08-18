@@ -17,9 +17,8 @@ set(CMAKE_CUDA_EXTENSIONS OFF)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bld)
 
-add_executable (${PROJECT_NAME} "${CMAKE_SOURCE_DIR}/src/CUSolver_test.cpp")
+add_executable (${PROJECT_NAME} "src/CUSolver_main.cpp" "src/CUSolver_solver.cpp" "src/CUSolver_helper.cpp"  "src/CUSolver_io.cpp" "src/CUSolver_helper.h" )
 
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/includes")
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE CUDA::cudart CUDA::cublas CUDA::cusolver)
